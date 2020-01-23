@@ -4,31 +4,26 @@ package com.twu.biblioteca;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 
 public class BibliotecaServiceTest {
 
     private BibliotecaService service;
     private BibliotecaRepository repository;
-
-    private List<Book> books;
-
+    private String listOfBooks;
+    private List<Book> booksSaved;
 
     @Before
     public void setUp() {
         service = new BibliotecaService();
-        books = new ArrayList<Book>();
-        books.add(new Book("Alexander and the Terrible", "Judith Viorst",  "1972"));
-        books.add(new Book("Amelia Bedelia", "Peggy Parish", "1963"));
-        books.add(new Book("Bark, George", "Jules Feiffer", "1999"));
-        books.add(new Book("Because of Winn-Dixie", "Kate DiCamillo", "2000"));
-        books.add(new Book("Bridge to Terabithia",  "Katherine Paterson", "1977"));
-        books.add(new Book("Curious George", "H.A. Rey", "1941"));
-        books.add(new Book("Freight Train", "Donald Crews", "1978"));
+        repository = new BibliotecaRepository();
+        listOfBooks = service.getListOfBooks();
+        booksSaved = repository.getListOfBooks();
     }
 
     @Test
@@ -42,4 +37,28 @@ public class BibliotecaServiceTest {
         String expected = "Title: Freight Train -- Author: 'Donald Crews -- Year Published: '1978.";
         assertTrue(service.getListOfBooks().contains(expected));
     }
+
+    @Test
+    public void showMenu() {
+        String expected = "Menu of Options: \n" +
+                "(type the number of the option) \n" +
+                "1 - List of Books \n" +
+                "0 - Quit";
+        assertEquals(expected, service.menu());
+    }
+
+    @Test
+    public void chooseOptionOneFromMenuShouldShowListOfBooks() {
+        int option = 1;
+        assertThat(service.getMenuOption(option), is(listOfBooks + "\n" + service.menu()));
+    }
+
+    @Test
+    public void chooseAnotherOptionShouldShowNotImplemented() {
+        String expected = "Please select a valid option!\n" + service.menu();
+        int option = 2;
+        assertThat(service.getMenuOption(option), is(expected));
+    }
+
+
 }

@@ -5,9 +5,10 @@ import java.util.List;
 
 public class BibliotecaRepository {
 
-    private static List<Book> books = new ArrayList<Book>();
+    private static List<Book> books;
 
     public static List<Book> getListOfBooks() {
+        books = new ArrayList<Book>();
         books.add( new Book("Alexander and the Terrible", "Judith Viorst",  "1972"));
         books.add(new Book("Amelia Bedelia", "Peggy Parish", "1963"));
         books.add(new Book("Bark, George", "Jules Feiffer", "1999"));
