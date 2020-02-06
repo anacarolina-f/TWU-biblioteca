@@ -1,22 +1,22 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BibliotecaRepository {
 
-    private static List<Book> books;
+    private static List<Book> books = new ArrayList<>(Arrays.asList(
+            new Book(1, "Alexander and the Terrible", "Judith Viorst", "1972"),
+            new Book(2, "Amelia Bedelia", "Peggy Parish", "1963"),
+            new Book(3, "Bark, George", "Jules Feiffer", "1999"),
+            new Book(4, "Because of Winn-Dixie", "Kate DiCamillo", "2000"),
+            new Book(5, "Bridge to Terabithia", "Katherine Paterson", "1977"),
+            new Book(6, "Curious George", "H.A. Rey", "1941"),
+            new Book(7, "Freight Train", "Donald Crews", "1978")
+    ));
 
-    public static List<Book> getListOfBooks() {
-        books = new ArrayList<Book>();
-        books.add( new Book("Alexander and the Terrible", "Judith Viorst",  "1972"));
-        books.add(new Book("Amelia Bedelia", "Peggy Parish", "1963"));
-        books.add(new Book("Bark, George", "Jules Feiffer", "1999"));
-        books.add(new Book("Because of Winn-Dixie", "Kate DiCamillo", "2000"));
-        books.add(new Book("Bridge to Terabithia",  "Katherine Paterson", "1977"));
-        books.add(new Book("Curious George", "H.A. Rey", "1941"));
-        books.add(new Book("Freight Train", "Donald Crews", "1978"));
-
+    public List<Book> getListOfBooks() {
         return books;
     }
 

@@ -6,36 +6,39 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.hamcrest.core.IsCollectionContaining.hasItems;
+import static org.hamcrest.core.StringContains.containsString;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class BibliotecaServiceTest {
 
-    private BibliotecaService service;
+    private BibliotecaService bibliotecaService;
+    private BookService bookService;
+    private BibliotecaMenu menu;
     private BibliotecaRepository repository;
-    private String listOfBooks;
-    private List<Book> booksSaved;
+    private List<Book> books;
 
     @Before
     public void setUp() {
-        service = new BibliotecaService();
+        bibliotecaService = new BibliotecaService();
+        bookService = new BookService();
+        menu = new BibliotecaMenu();
         repository = new BibliotecaRepository();
-        listOfBooks = service.getListOfBooks();
-        booksSaved = repository.getListOfBooks();
+        books = repository.getListOfBooks();
     }
 
     @Test
     public void welcomeMessageWhenStarts() {
         String expected = "Welcome to Biblioteca. Your on-stop-shop for great book titles in Bangalore";
-        assertEquals(expected, service.welcomeMessage());
+//        assertEquals(expected, bibliotecaService.start());
     }
 
     @Test
     public void listOfBooksContainsBook() {
-        String expected = "Title: Freight Train -- Author: 'Donald Crews -- Year Published: '1978.";
-        assertTrue(service.getListOfBooks().contains(expected));
+        String expected = repository.getListOfBooks().get(0).toString();
+        assertThat(bookService.getListAvailableBooks(), hasItems(expected));
     }
 
     @Test
@@ -43,22 +46,45 @@ public class BibliotecaServiceTest {
         String expected = "Menu of Options: \n" +
                 "(type the number of the option) \n" +
                 "1 - List of Books \n" +
+                "2 - Checkout a book \n" +
+                "3 - Return a book" +
                 "0 - Quit";
-        assertEquals(expected, service.menu());
+        assertEquals(expected, menu.showMainMenu());
     }
 
+    //NOT
     @Test
     public void chooseOptionOneFromMenuShouldShowListOfBooks() {
         int option = 1;
-        assertThat(service.getMenuOption(option), is(listOfBooks + "\n" + service.menu()));
+
+//        assertThat(bibliotecaService.showBookList(), containsString(books.get(0).toString()));
+    }
+
+    //NOT
+    @Test
+    public void chooseAnotherOptionShouldShowInvalidOptioonMsg() {
+        String expected = "Invalid option";
+        int option = 99;
+ //       assertThat(service.getMenuOption(option), is(expected));
+    }
+
+    //NOT
+    @Test
+    public void shouldShowCheckoutMenuMessageWhenChooseOptionTwo() {
+        int option = 2;
+        String expected = "Checkout Menu: Type the book ID to checkout the book: ";
+        assertThat(menu.showCheckoutMenu(), is(expected));
     }
 
     @Test
-    public void chooseAnotherOptionShouldShowNotImplemented() {
-        String expected = "Please select a valid option!\n" + service.menu();
-        int option = 2;
-        assertThat(service.getMenuOption(option), is(expected));
+    public void shouldShowMessageWhenCheckOutABookWithSuccess() {
+        assertThat(bookService.checkoutBook(1), is("Thank you! Enjoy the book!"));
     }
 
+    @Test
+    public void shouldShowMessageWhenCheckOutABookWithoutSuccess() {
+        books.get(0).setAvailable(false);
+        assertThat(bookService.checkoutBook(1), is("Sorry, that book is not available."));
+    }
 
 }

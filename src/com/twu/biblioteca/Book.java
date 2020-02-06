@@ -1,17 +1,29 @@
 package com.twu.biblioteca;
 
 public class Book {
+    private Integer id;
     private String title;
     private String author;
     private String year;
+    private boolean available;
 
     public Book() {
     }
 
-    public Book(String title, String author, String year) {
+    public Book(Integer id, String title, String author, String year) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.year = year;
+        available = true;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -38,10 +50,19 @@ public class Book {
         this.year = year;
     }
 
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
     @Override
     public String toString() {
-        return "Title: " + title +
-                " -- Author: '" + author +
-                " -- Year Published: '" + year + ".";
+        return "#" + getId() +
+                " -- Title: " + getTitle() +
+                " -- Author: '" + getAuthor() +
+                " -- Year Published: '" + getYear() + ".\n";
     }
 }

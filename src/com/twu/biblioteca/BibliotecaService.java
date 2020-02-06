@@ -1,53 +1,84 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class BibliotecaService {
 
-    BibliotecaRepository repository;
+    private BibliotecaMenu menu = new BibliotecaMenu();
+    private BookService bookService = new BookService();
+    private Scanner scanner = new Scanner(System.in);
 
-    private String welcomeMessage = "Welcome to Biblioteca. Your on-stop-shop for great book titles in Bangalore";
+    public BibliotecaService() { }
 
-    public String welcomeMessage() {
-        return welcomeMessage;
+    public void start() {
+        System.out.println(welcomeMessage());
+        System.out.println(showMainMenu());
+
+        try {
+            int option;
+
+            do {
+                option = scanner.nextInt();
+                int bookID;
+                switch (option) {
+                    case 1:
+                        System.out.println(showBookList());
+                        System.out.println(showMainMenu());
+                        break;
+                    case 2:
+                        System.out.println(showMenuCheckout());
+                        bookID = scanner.nextInt();
+                        checkoutBook(bookID);
+                        System.out.println(showMainMenu());
+                        break;
+                    case 3:
+                        System.out.println(showReturnMenu());
+                        bookID = scanner.nextInt();
+                        returnBook(bookID);
+                        System.out.println(showMainMenu());
+                        break;
+                    case 0:
+                        System.out.println("Quit.");
+                        break;
+                    default:
+                        System.out.println("Invalid option.");
+                        System.out.println(showMainMenu());
+                        break;
+                }
+            } while (option != 0);
+
+        } catch (InputMismatchException e) {
+            System.out.println("Only numbers allowed.");
+        }
     }
 
-    public String getListOfBooks() {
-        List<Book> bookList = repository.getListOfBooks();
-        String booksColumn = "";
-
-        for (Book book : bookList) {
-            booksColumn = book.toString() + "\n" + booksColumn;
-        }
-        return booksColumn;
+    private String welcomeMessage() {
+        return "Welcome to Biblioteca. Your on-stop-shop for great book titles in Bangalore";
     }
 
-    public String menu() {
-        return "Menu of Options: \n" +
-                "(type the number of the option) \n" +
-                "1 - List of Books \n" +
-                "0 - Quit";
+    private String showMainMenu() {
+        return menu.showMainMenu();
     }
 
-    public String getMenuOption(int option) {
-        if (option == 1) {
-            return getListOfBooks() + "\n" + menu();
-        }
-        else if (option == 0) {
-            return "Quit";
-        }
-        else return "Please select a valid option!" + "\n" + menu();
+    private String showBookList() {
+        return bookService.getListAvailableBooks().stream().collect(Collectors.joining());
     }
 
-    public String getListOfAvailableBooks() {
-        List<Book> bookList = repository.getListOfBooks();
-        String booksColumn = "";
+    private String showMenuCheckout() {
+        return menu.showCheckoutMenu();
+    }
 
-        for (Book book : bookList) {
-            booksColumn = book.toString() + "\n" + booksColumn;
-        }
-        return booksColumn;
+    private void checkoutBook(int bookID) {
+        System.out.println(bookService.checkoutBook(bookID) + "\n");
+    }
+
+    private String showReturnMenu() {
+        return menu.showReturnMenu();
+    }
+
+    private void returnBook(int bookID) {
+        System.out.println(bookService.returnBook(bookID) + "\n");
     }
 }
