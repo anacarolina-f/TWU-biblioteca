@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.services;
+
+import com.twu.biblioteca.BibliotecaMenu;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

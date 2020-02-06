@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.models;
 
 public class Movie {
     private Integer id;
@@ -11,12 +11,13 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(Integer id, String title, String author, String year) {
+    public Movie(Integer id, String name, String director, String year, int rating) {
         this.id = id;
-        this.title = title;
-        this.author = author;
+        this.name = name;
+        this.director = director;
         this.year = year;
-        available = true;
+        this.rating = rating;
+        this.available = true;
     }
 
     public Integer getId() {
@@ -27,20 +28,20 @@ public class Movie {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getDirector() {
+        return director;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
     public String getYear() {
@@ -49,6 +50,14 @@ public class Movie {
 
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public boolean isAvailable() {
@@ -62,8 +71,9 @@ public class Movie {
     @Override
     public String toString() {
         return "#" + getId() +
-                " -- Title: " + getTitle() +
-                " -- Author: '" + getAuthor() +
-                " -- Year Published: '" + getYear() + ".\n";
+                " -- Name: " + getName() +
+                " -- Director: '" + getDirector() +
+                " -- Year Published: '" + getYear() +
+                " -- Rating: " + getRating() + ".\n";
     }
 }

@@ -1,4 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.repositories;
+
+import com.twu.biblioteca.models.Book;
 
 import java.util.ArrayList;
 import java.util.Arrays;

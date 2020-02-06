@@ -1,4 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.services;
+
+import com.twu.biblioteca.repositories.BibliotecaRepository;
+import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.exceptions.BookNotFoundException;
 
 import java.util.List;
 import java.util.stream.Collectors;
