@@ -54,31 +54,31 @@ public class BibliotecaService {
         }
     }
 
-    private String welcomeMessage() {
+    public String welcomeMessage() {
         return "Welcome to Biblioteca. Your on-stop-shop for great book titles in Bangalore";
     }
 
-    private String showMainMenu() {
+    public String showMainMenu() {
         return menu.showMainMenu();
     }
 
-    private String showBookList() {
+    public String showBookList() {
         return bookService.getListAvailableBooks().stream().collect(Collectors.joining());
     }
 
-    private String showMenuCheckout() {
+    public String showMenuCheckout() {
         return menu.showCheckoutMenu();
     }
 
-    private void checkoutBook(int bookID) {
+    public void checkoutBook(int bookID) {
         System.out.println(bookService.checkoutBook(bookID) + "\n");
     }
 
-    private String showReturnMenu() {
+    public String showReturnMenu() {
         return menu.showReturnMenu();
     }
 
-    private void returnBook(int bookID) {
+    public void returnBook(int bookID) {
         System.out.println(bookService.returnBook(bookID) + "\n");
     }
 }
