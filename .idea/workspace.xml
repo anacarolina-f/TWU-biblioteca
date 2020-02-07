@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b139fc06-8f9d-4384-9aec-064c006d3a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/anacarolina_f.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TWU-biblioteca.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/laanacarolina.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BookNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BookNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +25,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Application.BibliotecaApp">
     <configuration name="BibliotecaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -149,41 +140,46 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="451" height="466" key="DebuggerActiveHint/0.23.1792.1017@0.23.1792.1017" timestamp="1579809841657" />
-    <state width="1750" height="276" key="GridCell.Tab.0.bottom" timestamp="1579810169529">
+    <state width="1750" height="115" key="GridCell.Tab.0.bottom" timestamp="1581100063050">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="276" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1579810169529" />
-    <state width="1750" height="276" key="GridCell.Tab.0.center" timestamp="1579810169529">
+    <state width="1750" height="115" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581100063050" />
+    <state width="1750" height="115" key="GridCell.Tab.0.center" timestamp="1581100063049">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="276" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1579810169529" />
-    <state width="1750" height="276" key="GridCell.Tab.0.left" timestamp="1579810169528">
+    <state width="1750" height="115" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581100063049" />
+    <state width="1750" height="115" key="GridCell.Tab.0.left" timestamp="1581100063049">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="276" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1579810169528" />
-    <state width="1750" height="276" key="GridCell.Tab.0.right" timestamp="1579810169529">
+    <state width="1750" height="115" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581100063049" />
+    <state width="1750" height="115" key="GridCell.Tab.0.right" timestamp="1581100063050">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="276" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1579810169529" />
-    <state width="1750" height="341" key="GridCell.Tab.1.bottom" timestamp="1579809901686">
+    <state width="1750" height="115" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581100063050" />
+    <state width="1750" height="398" key="GridCell.Tab.1.bottom" timestamp="1581085447018">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="341" key="GridCell.Tab.1.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1579809901686" />
-    <state width="1750" height="341" key="GridCell.Tab.1.center" timestamp="1579809901685">
+    <state width="1750" height="398" key="GridCell.Tab.1.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581085447018" />
+    <state width="1750" height="398" key="GridCell.Tab.1.center" timestamp="1581085447018">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="341" key="GridCell.Tab.1.center/0.23.1792.1017@0.23.1792.1017" timestamp="1579809901685" />
-    <state width="1750" height="341" key="GridCell.Tab.1.left" timestamp="1579809901684">
+    <state width="1750" height="398" key="GridCell.Tab.1.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581085447018" />
+    <state width="1750" height="398" key="GridCell.Tab.1.left" timestamp="1581085447017">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="341" key="GridCell.Tab.1.left/0.23.1792.1017@0.23.1792.1017" timestamp="1579809901684" />
-    <state width="1750" height="341" key="GridCell.Tab.1.right" timestamp="1579809901685">
+    <state width="1750" height="398" key="GridCell.Tab.1.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581085447017" />
+    <state width="1750" height="398" key="GridCell.Tab.1.right" timestamp="1581085447018">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="341" key="GridCell.Tab.1.right/0.23.1792.1017@0.23.1792.1017" timestamp="1579809901685" />
-    <state x="573" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1579718066688">
-      <screen x="0" y="23" width="1792" height="1020" />
+    <state width="1750" height="398" key="GridCell.Tab.1.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581085447018" />
+    <state x="397" y="170" key="SettingsEditor" timestamp="1581099369292">
+      <screen x="0" y="23" width="1792" height="1017" />
     </state>
+    <state x="397" y="170" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1581099369292" />
+    <state x="573" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1581092467909">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="573" y="364" key="com.intellij.ide.util.TipDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1581092467909" />
     <state x="573" y="365" key="com.intellij.ide.util.TipDialog/0.23.1792.1020@0.23.1792.1020" timestamp="1579718066688" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1579784205866">
       <screen x="0" y="23" width="1792" height="1017" />

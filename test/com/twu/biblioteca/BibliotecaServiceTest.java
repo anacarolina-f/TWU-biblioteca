@@ -20,6 +20,9 @@ public class BibliotecaServiceTest {
     private BibliotecaRepository repository;
     private List<Book> books;
 
+    //FAZER STUB DO SERVICE SEM USER INPUT?
+    //USAR INJECAO NO SERVICE?
+
     @Before
     public void setUp() {
         bibliotecaService = new BibliotecaService();
@@ -78,13 +81,15 @@ public class BibliotecaServiceTest {
 
     @Test
     public void shouldShowMessageWhenCheckOutABookWithSuccess() {
-        assertThat(bookService.checkoutBook(1), is("Thank you! Enjoy the book!"));
+        String expected = "Thank you! Enjoy the book!";
+        assertThat(bookService.checkoutBook(1), is(expected));
     }
 
     @Test
     public void shouldShowMessageWhenCheckOutABookWithoutSuccess() {
+        String expected = "Sorry, that book is not available.";
         books.get(0).setAvailable(false);
-        assertThat(bookService.checkoutBook(1), is("Sorry, that book is not available."));
+        assertThat(bookService.checkoutBook(1), is(expected));
     }
 
 }
