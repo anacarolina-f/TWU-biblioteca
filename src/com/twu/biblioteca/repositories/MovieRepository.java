@@ -1,6 +1,5 @@
 package com.twu.biblioteca.repositories;
 
-import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.Movie;
 
 import java.util.ArrayList;
@@ -10,16 +9,18 @@ import java.util.List;
 public class MovieRepository {
 
     private static List<Movie> movies = new ArrayList<>(Arrays.asList(
-            new Movie(1, "Alexander and the Terrible", "Judith Viorst", "1972", 5),
-            new Movie(2, "Amelia Bedelia", "Peggy Parish", "1963", 5),
-            new Movie(3, "Bark, George", "Jules Feiffer", "1999", 3),
-            new Movie(4, "Because of Winn-Dixie", "Kate DiCamillo", "2000", 2),
-            new Movie(5, "Bridge to Terabithia", "Katherine Paterson", "1977", 2),
-            new Movie(6, "Curious George", "H.A. Rey", "1941", 2),
-            new Movie(7, "Freight Train", "Donald Crews", "1978", 1)
+            new Movie(1, "FORD V FERRARI", "Peter Chernin", "2019",1),
+            new Movie(2, "THE IRISHMAN", "Martin Scorsese","2019",5),
+            new Movie(3, "JOJO RABBIT", "Carthew Neal", "2019",3),
+            new Movie(4, "JOKER", "Todd Phillips", "2019",2),
+            new Movie(5, "LITTLE WOMEN", "Amy Pascal", "2019",2),
+            new Movie(6, "MARRIAGE STORY", "Noah Baumbach", "2019",2),
+            new Movie(7, "1917", "Sam Mendes", "2019",1),
+            new Movie(7, "ONCE UPON A TIME...IN HOLLYWOOD", "David Heyman", "2019",1),
+            new Movie(7, "PARASITE", "Kwak Sin Ae and Bong Joon Ho", "2019",5)
     ));
 
-    public List<Movie> getListOfBooks() {
+    public List<Movie> getListOfMovies() {
         return movies;
     }
 
