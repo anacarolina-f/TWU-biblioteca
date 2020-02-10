@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b139fc06-8f9d-4384-9aec-064c006d3a73" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/TWU-biblioteca/com/twu/biblioteca/BibliotecaServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TWU-biblioteca/com/twu/biblioteca/BibliotecaServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
