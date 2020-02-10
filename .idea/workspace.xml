@@ -2,22 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b139fc06-8f9d-4384-9aec-064c006d3a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/enums/UserType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/exceptions/ItemNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/MenuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/Book.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BookNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BookService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/TWU-biblioteca/com/twu/biblioteca/BibliotecaServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TWU-biblioteca/com/twu/biblioteca/BibliotecaServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaMenu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/exceptions/BookNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/BibliotecaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/BookRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BibliotecaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BibliotecaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaMenuTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -34,25 +57,26 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/com/twu/biblioteca" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.twu.biblioteca.repositories" />
       <recent name="com.twu.biblioteca" />
+      <recent name="com.twu.biblioteca.repositories" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.twu.biblioteca.models" />
       <recent name="com.twu.biblioteca" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BibliotecaServiceTest">
+  <component name="RunManager" selected="Application.BibliotecaApp">
     <configuration name="BibliotecaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.twu.biblioteca.BibliotecaApp" />
       <module name="TWU-biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -64,7 +88,7 @@
       <module name="TWU-biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -79,7 +103,7 @@
       <module name="TWU-biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,7 +119,7 @@
       <module name="TWU-biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,7 +135,7 @@
       <module name="TWU-biblioteca" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.twu.biblioteca.*" />
+          <option name="PATTERN" value="com.twu.biblioteca.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,9 +149,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BibliotecaApp" />
         <item itemvalue="JUnit.BibliotecaServiceTest" />
         <item itemvalue="JUnit.BibliotecaServiceTest.listOfBooksContainsBook" />
-        <item itemvalue="Application.BibliotecaApp" />
         <item itemvalue="JUnit.BibliotecaServiceTest.shouldShowMessageWhenCheckOutABookWithoutSuccess" />
         <item itemvalue="JUnit.BibliotecaServiceTest.checkOutABook" />
       </list>
@@ -171,14 +195,18 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="100" y="123" width="1592" height="817" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1581028589587" />
-    <state x="709" y="254" key="#com.intellij.ide.util.MemberChooser" timestamp="1581104728076">
+    <state x="709" y="254" key="#com.intellij.ide.util.MemberChooser" timestamp="1581369833154">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="709" y="254" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1581104728076" />
+    <state x="709" y="254" key="#com.intellij.ide.util.MemberChooser/0.23.1792.1017@0.23.1792.1017" timestamp="1581369833154" />
     <state x="642" y="369" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog" timestamp="1580911735574">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="642" y="369" key="#com.intellij.refactoring.move.moveInstanceMethod.MoveInstanceMethodDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1580911735574" />
+    <state x="574" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581366257099">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="574" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1581366257099" />
     <state x="634" y="285" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1581029767374">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -195,22 +223,22 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="451" height="466" key="DebuggerActiveHint/0.23.1792.1017@0.23.1792.1017" timestamp="1579809841657" />
-    <state width="1750" height="283" key="GridCell.Tab.0.bottom" timestamp="1581030992967">
+    <state width="1750" height="455" key="GridCell.Tab.0.bottom" timestamp="1581370468085">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="283" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581030992967" />
-    <state width="1750" height="283" key="GridCell.Tab.0.center" timestamp="1581030992966">
+    <state width="1750" height="455" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468085" />
+    <state width="1750" height="455" key="GridCell.Tab.0.center" timestamp="1581370468085">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="283" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581030992966" />
-    <state width="1750" height="283" key="GridCell.Tab.0.left" timestamp="1581030992965">
+    <state width="1750" height="455" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468085" />
+    <state width="1750" height="455" key="GridCell.Tab.0.left" timestamp="1581370468084">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="283" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581030992965" />
-    <state width="1750" height="283" key="GridCell.Tab.0.right" timestamp="1581030992966">
+    <state width="1750" height="455" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468084" />
+    <state width="1750" height="455" key="GridCell.Tab.0.right" timestamp="1581370468085">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="283" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581030992966" />
+    <state width="1750" height="455" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468085" />
     <state width="1750" height="398" key="GridCell.Tab.1.bottom" timestamp="1580908942547">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -235,6 +263,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state x="496" y="271" key="Vcs.Push.Dialog.v2/0.23.1792.1017@0.23.1792.1017" timestamp="1581019031590" />
+    <state x="679" y="316" key="chooseDestDirectoryDialog" timestamp="1581338024275">
+      <screen x="0" y="23" width="1792" height="1017" />
+    </state>
+    <state x="679" y="316" key="chooseDestDirectoryDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1581338024275" />
     <state x="573" y="365" key="com.intellij.ide.util.TipDialog" timestamp="1579718066688">
       <screen x="0" y="23" width="1792" height="1020" />
     </state>
@@ -243,10 +275,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.23.1792.1017@0.23.1792.1017" timestamp="1579784205866" />
-    <state x="658" y="145" key="refactoring.ChangeSignatureDialog" timestamp="1580846989453">
+    <state x="658" y="145" key="refactoring.ChangeSignatureDialog" timestamp="1581369749506">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="658" y="145" key="refactoring.ChangeSignatureDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1580846989453" />
+    <state x="658" y="145" key="refactoring.ChangeSignatureDialog/0.23.1792.1017@0.23.1792.1017" timestamp="1581369749506" />
     <state x="561" y="248" width="670" height="676" key="search.everywhere.popup" timestamp="1581010369229">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>

@@ -1,25 +1,32 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.services;
+
+import com.twu.biblioteca.enums.UserType;
+import com.twu.biblioteca.models.User;
 
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class BibliotecaService {
 
-    private BibliotecaMenu menu = new BibliotecaMenu();
+    private MenuService menu = new MenuService();
     private BookService bookService = new BookService();
+    private MovieService movieService = new MovieService();
+    private LoginService loginService = new LoginService();
     private Scanner scanner = new Scanner(System.in);
-    private int bookId;
+    private int itemId;
     private static final String WELCOME_MSG = "Welcome to Biblioteca. Your on-stop-shop for great book titles in Bangalore";
     private static final String ONLY_NUM = "Only numbers allowed.";
     private static final String QUIT = "Quit.";
     private static final String INVALID = "Invalid option.";
+    private static final String INVALID_USER = "Invalid user, please try again";
+    private static final String LOGIN_USER = "Insert your userId: ";
 
     public BibliotecaService() { }
 
     public void start() {
         System.out.println(menuStart());
-
         try {
             int option;
             do {
@@ -37,10 +44,22 @@ public class BibliotecaService {
                 showListBooks();
                 break;
             case 2:
-                menuCheckoutBook();
+                menuCheckout(2);
                 break;
             case 3:
                 menuReturnBook();
+                break;
+            case 4:
+                showListMovies();
+                break;
+            case 5:
+                menuCheckout(5);
+                break;
+            case 6:
+                menuLibrarian();
+                break;
+            case 7:
+                showUserInformation();
                 break;
             case 0:
                 System.out.println(QUIT);
@@ -51,27 +70,79 @@ public class BibliotecaService {
         }
     }
 
+    private int userInput() {
+        return scanner.nextInt();
+    }
+
+    private String userLogin() {
+        return scanner.next();
+    }
+
+    private void menuLibrarian() {
+        User verified = login();
+        if (verified.getUserType().equals(UserType.LIBRARIAN)) {
+            System.out.println(menu.showLibrarianMenu() + "\n");
+            int option = userInput();
+            if (option == 1) {
+                System.out.println(showListBooksChecked() + "\n");
+            }
+        } else {
+            System.out.println(INVALID_USER);
+        }
+        System.out.println(menu.showMainMenu());
+    }
+
+    private List<String> showListBooksChecked() {
+        return bookService.listBooksCheckedOut();
+    }
+
+    private User login() {
+        System.out.println(LOGIN_USER);
+        String userId = userLogin();
+        System.out.println("Insert your password: ");
+        String userPassword = userLogin();
+        User user = loginService.userLogin(userId, userPassword);
+        if (user != null) {
+            System.out.println("Hello " + user.getName());
+            return user;
+        }
+        return null;
+    }
+
+    private void showListMovies() {
+        System.out.println(showMoviesList());
+        System.out.println(menu.showMainMenu());
+    }
+
     private void showListBooks() {
         System.out.println(showBookList());
         System.out.println(menu.showMainMenu());
     }
 
-    private void menuCheckoutBook() {
-        System.out.println(menu.showCheckoutMenu());
-        bookId = userInput();
-        checkoutBook(bookId);
-        System.out.println(menu.showMainMenu());
+    private void menuCheckout(int option) {
+        User verified = login();
+        if (verified != null) {
+            System.out.println(menu.showCheckoutMenu(option));
+            itemId = userInput();
+            checkoutItem(verified, option, itemId);
+            System.out.println(menu.showMainMenu());
+        } else {
+            System.out.println(INVALID_USER);
+            login();
+        }
     }
 
     private void menuReturnBook() {
-        System.out.println(menu.showReturnMenu());
-        bookId = userInput();
-        returnBook(bookId);
-        System.out.println(menu.showMainMenu());
-    }
-
-    private int userInput() {
-        return scanner.nextInt();
+        User verified = login();
+        if (verified != null) {
+            System.out.println(menu.showReturnMenu());
+            itemId = userInput();
+            returnBook(itemId);
+            System.out.println(menu.showMainMenu());
+        } else {
+            System.out.println(INVALID_USER);
+            login();
+        }
     }
 
     private void menuInvalidOption() {
@@ -87,11 +158,25 @@ public class BibliotecaService {
         return bookService.getListAvailableBooks().stream().collect(Collectors.joining());
     }
 
-    private void checkoutBook(int bookID) {
-        System.out.println(bookService.checkoutBook(bookID) + "\n");
+    private String showMoviesList() {
+        return movieService.getListAvailableMovies().stream().collect(Collectors.joining());
+    }
+
+    private void checkoutItem(User user, int option, int itemId) {
+        if (option == 2) {
+            System.out.println(bookService.checkoutBook(user, itemId) + "\n");
+        } else if (option == 5) {
+            System.out.println(movieService.checkoutMovie(itemId));
+        }
     }
 
     private void returnBook(int bookID) {
         System.out.println(bookService.returnBook(bookID) + "\n");
+    }
+
+    private void showUserInformation() {
+        User user = login();
+        System.out.println(user.toString());
+        System.out.println(menu.showMainMenu());
     }
 }

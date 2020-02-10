@@ -6,15 +6,19 @@ public class User {
     private String id;
     private String password;
     private String name;
+    private String email;
+    private String phone;
     private UserType userType;
 
     public User() {
     }
 
-    public User(String id, String password, String name, UserType userType) {
+    public User(String id, String password, String name, String email, String phone, UserType userType) {
         this.id = id;
         this.password = password;
         this.name = name;
+        this.email = email;
+        this.phone = phone;
         this.userType = userType;
     }
 
@@ -42,11 +46,34 @@ public class User {
         this.name = name;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public UserType getUserType() {
         return userType;
     }
 
     public void setUserType(UserType userType) {
         this.userType = userType;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name +
+                ", email: " + email +
+                ", phone: " + phone + "\n";
     }
 }

@@ -1,14 +1,15 @@
 package com.twu.biblioteca.services;
 
-import com.twu.biblioteca.repositories.BibliotecaRepository;
+import com.twu.biblioteca.exceptions.ItemNotFoundException;
 import com.twu.biblioteca.models.Book;
-import com.twu.biblioteca.exceptions.BookNotFoundException;
+import com.twu.biblioteca.models.User;
+import com.twu.biblioteca.repositories.BookRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookService {
-    private BibliotecaRepository repository = new BibliotecaRepository();
+    private BookRepository repository = new BookRepository();
 
     public BookService() {
     }
@@ -20,18 +21,23 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
-    public String checkoutBook(int bookID) {
+    public List<Book> getListAllBooks() {
+        return repository.getListOfBooks();
+    }
+
+    public String checkoutBook(User user, int bookID) {
         List<Book> booksAvailable = repository.getListOfBooks();
         for (Book book : booksAvailable) {
             if (book.getId() == bookID) {
                 if (book.isAvailable()) {
                     book.setAvailable(false);
+                    book.setUser(user);
                     return "Thank you! Enjoy the book!";
                 }
                 else return "Sorry, that book is not available.";
             }
         }
-        return new BookNotFoundException("Book not found!").getMessage();
+        return new ItemNotFoundException("Book not found!").getMessage();
     }
 
     public String returnBook(int bookID) {
@@ -40,11 +46,21 @@ public class BookService {
             if (book.getId() == bookID) {
                 if (!book.isAvailable()) {
                     book.setAvailable(true);
+                    book.setUser(null);
                     return "Thank you for returning the book!";
                 }
                 else return "That is not a valid book to return.";
             }
         }
-        return new BookNotFoundException("Book not found!").getMessage();
+        return new ItemNotFoundException("Book not found!").getMessage();
     }
+
+    public List<String> listBooksCheckedOut() {
+        return repository.getListOfBooks()
+                .stream()
+                .filter(book -> !book.isAvailable())
+                .map(Book::getUserBook)
+                .collect(Collectors.toList());
+    }
+
 }

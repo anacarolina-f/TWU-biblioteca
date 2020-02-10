@@ -10,8 +10,8 @@ import java.util.List;
 public class UserRepository {
 
     private static List<User> users = new ArrayList<>(Arrays.asList(
-            new User("CUS-1234", "password", "Judith Viorst", UserType.CUSTOMER),
-            new User("LIB-1234", "password", "Peggy Parish", UserType.LIBRARIAN)
+            new User("000-1234", "password", "Judith Viorst", "email@email.com", "333-55-55", UserType.CUSTOMER),
+            new User("000-6666", "password", "Peggy Parish", "email@email.com", "333-55-55", UserType.LIBRARIAN)
     ));
 
     public List<User> getListOfUsers() {
