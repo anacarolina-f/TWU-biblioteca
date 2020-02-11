@@ -21,10 +21,6 @@ public class BookService {
                 .collect(Collectors.toList());
     }
 
-    public List<Book> getListAllBooks() {
-        return repository.getListOfBooks();
-    }
-
     public String checkoutBook(User user, int bookID) {
         List<Book> booksAvailable = repository.getListOfBooks();
         for (Book book : booksAvailable) {

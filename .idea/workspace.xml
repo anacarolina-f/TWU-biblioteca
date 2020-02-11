@@ -2,31 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b139fc06-8f9d-4384-9aec-064c006d3a73" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/exceptions/ItemNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/MenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BibliotecaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BookNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TWU-biblioteca/com/twu/biblioteca/BookService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/TWU-biblioteca/com/twu/biblioteca/BibliotecaServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/TWU-biblioteca/com/twu/biblioteca/BibliotecaServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/exceptions/BookNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/BibliotecaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/repositories/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BibliotecaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BibliotecaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaMenuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaMenuTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/services/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/services/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/services/MovieService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,22 +203,22 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="451" height="466" key="DebuggerActiveHint/0.23.1792.1017@0.23.1792.1017" timestamp="1579809841657" />
-    <state width="1750" height="455" key="GridCell.Tab.0.bottom" timestamp="1581370468085">
+    <state width="1750" height="274" key="GridCell.Tab.0.bottom" timestamp="1581424288443">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="455" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468085" />
-    <state width="1750" height="455" key="GridCell.Tab.0.center" timestamp="1581370468085">
+    <state width="1750" height="274" key="GridCell.Tab.0.bottom/0.23.1792.1017@0.23.1792.1017" timestamp="1581424288442" />
+    <state width="1750" height="274" key="GridCell.Tab.0.center" timestamp="1581424288441">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="455" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468085" />
-    <state width="1750" height="455" key="GridCell.Tab.0.left" timestamp="1581370468084">
+    <state width="1750" height="274" key="GridCell.Tab.0.center/0.23.1792.1017@0.23.1792.1017" timestamp="1581424288441" />
+    <state width="1750" height="274" key="GridCell.Tab.0.left" timestamp="1581424288441">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="455" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468084" />
-    <state width="1750" height="455" key="GridCell.Tab.0.right" timestamp="1581370468085">
+    <state width="1750" height="274" key="GridCell.Tab.0.left/0.23.1792.1017@0.23.1792.1017" timestamp="1581424288441" />
+    <state width="1750" height="274" key="GridCell.Tab.0.right" timestamp="1581424288442">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state width="1750" height="455" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581370468085" />
+    <state width="1750" height="274" key="GridCell.Tab.0.right/0.23.1792.1017@0.23.1792.1017" timestamp="1581424288442" />
     <state width="1750" height="398" key="GridCell.Tab.1.bottom" timestamp="1580908942547">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
@@ -255,10 +235,10 @@
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
     <state width="1750" height="398" key="GridCell.Tab.1.right/0.23.1792.1017@0.23.1792.1017" timestamp="1580908942546" />
-    <state x="397" y="170" key="SettingsEditor" timestamp="1580837634781">
+    <state x="397" y="170" key="SettingsEditor" timestamp="1581424411439">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
-    <state x="397" y="170" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1580837634781" />
+    <state x="397" y="170" key="SettingsEditor/0.23.1792.1017@0.23.1792.1017" timestamp="1581424411439" />
     <state x="496" y="271" key="Vcs.Push.Dialog.v2" timestamp="1581019031590">
       <screen x="0" y="23" width="1792" height="1017" />
     </state>
