@@ -1,6 +1,14 @@
 package com.twu.biblioteca;
 
 
+
+import com.twu.biblioteca.enums.UserType;
+import com.twu.biblioteca.models.Book;
+import com.twu.biblioteca.models.User;
+import com.twu.biblioteca.repositories.BookRepository;
+import com.twu.biblioteca.services.BibliotecaService;
+import com.twu.biblioteca.services.BookService;
+import com.twu.biblioteca.services.MenuService;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,7 +16,6 @@ import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
-import static org.hamcrest.core.StringContains.containsString;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
@@ -16,8 +23,8 @@ public class BibliotecaServiceTest {
 
     private BibliotecaService bibliotecaService;
     private BookService bookService;
-    private BibliotecaMenu menu;
-    private BibliotecaRepository repository;
+    private MenuService menu;
+    private BookRepository repository;
     private List<Book> books;
 
     //FAZER STUB DO SERVICE SEM USER INPUT?
@@ -27,8 +34,8 @@ public class BibliotecaServiceTest {
     public void setUp() {
         bibliotecaService = new BibliotecaService();
         bookService = new BookService();
-        menu = new BibliotecaMenu();
-        repository = new BibliotecaRepository();
+        menu = new MenuService();
+        repository = new BookRepository();
         books = repository.getListOfBooks();
     }
 
@@ -76,20 +83,22 @@ public class BibliotecaServiceTest {
     public void shouldShowCheckoutMenuMessageWhenChooseOptionTwo() {
         int option = 2;
         String expected = "Checkout Menu: Type the book ID to checkout the book: ";
-        assertThat(menu.showCheckoutMenu(), is(expected));
+        assertThat(menu.showCheckoutMenu(option), is(expected));
     }
 
     @Test
     public void shouldShowMessageWhenCheckOutABookWithSuccess() {
         String expected = "Thank you! Enjoy the book!";
-        assertThat(bookService.checkoutBook(1), is(expected));
+        User user = new User("000-6666", "password", "Peggy Parish", "email@email.com", "333-33-44", UserType.CUSTOMER);
+        assertThat(bookService.checkoutBook(user, 1), is(expected));
     }
 
     @Test
     public void shouldShowMessageWhenCheckOutABookWithoutSuccess() {
         String expected = "Sorry, that book is not available.";
         books.get(0).setAvailable(false);
-        assertThat(bookService.checkoutBook(1), is(expected));
+        User user = new User("000-6666", "password", "Peggy Parish", "email@email.com", "333-33-44", UserType.CUSTOMER);
+        assertThat(bookService.checkoutBook(user, 1), is(expected));
     }
 
 }

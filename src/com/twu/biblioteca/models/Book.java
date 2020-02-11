@@ -1,4 +1,4 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.models;
 
 public class Book {
     private Integer id;
@@ -6,6 +6,7 @@ public class Book {
     private String author;
     private String year;
     private boolean available;
+    private User user;
 
     public Book() {
     }
@@ -16,6 +17,7 @@ public class Book {
         this.author = author;
         this.year = year;
         available = true;
+        user = null;
     }
 
     public Integer getId() {
@@ -50,6 +52,14 @@ public class Book {
         this.year = year;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public boolean isAvailable() {
         return available;
     }
@@ -64,5 +74,9 @@ public class Book {
                 " -- Title: " + getTitle() +
                 " -- Author: '" + getAuthor() +
                 " -- Year Published: '" + getYear() + ".\n";
+    }
+
+    public String getUserBook() {
+        return user.getName() + " - " + toString();
     }
 }
