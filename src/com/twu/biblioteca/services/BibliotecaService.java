@@ -22,6 +22,8 @@ public class BibliotecaService {
     private static final String INVALID = "Invalid option.";
     private static final String INVALID_USER = "Invalid user, please try again";
     private static final String LOGIN_USER = "Insert your userId: ";
+    private static final String LOGIN_PASS = "Insert your password: ";
+    private static final String HELLO = "Hello ";
 
     public BibliotecaService() { }
 
@@ -70,12 +72,32 @@ public class BibliotecaService {
         }
     }
 
-    private int userInput() {
-        return scanner.nextInt();
+    private String menuStart() {
+        return WELCOME_MSG + "\n" + menu.showMainMenu();
     }
 
-    private String userLogin() {
-        return scanner.next();
+    private void showListBooks() {
+        System.out.println(showBookList());
+        System.out.println(menu.showMainMenu());
+    }
+
+    private void showListMovies() {
+        System.out.println(showMoviesList());
+        System.out.println(menu.showMainMenu());
+    }
+
+    private void menuCheckout(int option) {
+        User verified = login();
+        if (verified != null) {
+            System.out.println(menu.showCheckoutMenu(option));
+            itemId = userInput();
+            checkoutItem(verified, option, itemId);
+
+            System.out.println(menu.showMainMenu());
+        } else {
+            System.out.println(INVALID_USER);
+            login();
+        }
     }
 
     private void menuLibrarian() {
@@ -92,43 +114,16 @@ public class BibliotecaService {
         System.out.println(menu.showMainMenu());
     }
 
-    private List<String> showListBooksChecked() {
-        return bookService.listBooksCheckedOut();
-    }
-
-    private User login() {
-        System.out.println(LOGIN_USER);
-        String userId = userLogin();
-        System.out.println("Insert your password: ");
-        String userPassword = userLogin();
-        User user = loginService.userLogin(userId, userPassword);
-        if (user != null) {
-            System.out.println("Hello " + user.getName());
-            return user;
-        }
-        return null;
-    }
-
-    private void showListMovies() {
-        System.out.println(showMoviesList());
+    private void menuInvalidOption() {
+        System.out.println(INVALID);
         System.out.println(menu.showMainMenu());
     }
 
-    private void showListBooks() {
-        System.out.println(showBookList());
-        System.out.println(menu.showMainMenu());
-    }
-
-    private void menuCheckout(int option) {
-        User verified = login();
-        if (verified != null) {
-            System.out.println(menu.showCheckoutMenu(option));
-            itemId = userInput();
-            checkoutItem(verified, option, itemId);
-            System.out.println(menu.showMainMenu());
-        } else {
-            System.out.println(INVALID_USER);
-            login();
+    private void checkoutItem(User user, int option, int itemId) {
+        if (option == 2) {
+            System.out.println(bookService.checkoutBook(user, itemId) + "\n");
+        } else if (option == 5) {
+            System.out.println(movieService.checkoutMovie(itemId));
         }
     }
 
@@ -145,13 +140,35 @@ public class BibliotecaService {
         }
     }
 
-    private void menuInvalidOption() {
-        System.out.println(INVALID);
+    private void showUserInformation() {
+        User user = login();
+        System.out.println(user.toString());
         System.out.println(menu.showMainMenu());
     }
 
-    private String menuStart() {
-        return WELCOME_MSG + "\n" + menu.showMainMenu();
+    private int userInput() {
+        return scanner.nextInt();
+    }
+
+    private String userInputLogin() {
+        return scanner.next();
+    }
+
+    private List<String> showListBooksChecked() {
+        return bookService.listBooksCheckedOut();
+    }
+
+    private User login() {
+        System.out.println(LOGIN_USER);
+        String userId = userInputLogin();
+        System.out.println(LOGIN_PASS);
+        String userPassword = userInputLogin();
+        User user = loginService.userLogin(userId, userPassword);
+        if (user != null) {
+            System.out.println(HELLO + user.getName());
+            return user;
+        }
+        return null;
     }
 
     private String showBookList() {
@@ -162,21 +179,7 @@ public class BibliotecaService {
         return movieService.getListAvailableMovies().stream().collect(Collectors.joining());
     }
 
-    private void checkoutItem(User user, int option, int itemId) {
-        if (option == 2) {
-            System.out.println(bookService.checkoutBook(user, itemId) + "\n");
-        } else if (option == 5) {
-            System.out.println(movieService.checkoutMovie(itemId));
-        }
-    }
-
     private void returnBook(int bookID) {
         System.out.println(bookService.returnBook(bookID) + "\n");
-    }
-
-    private void showUserInformation() {
-        User user = login();
-        System.out.println(user.toString());
-        System.out.println(menu.showMainMenu());
     }
 }

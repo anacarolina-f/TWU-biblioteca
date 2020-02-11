@@ -33,18 +33,4 @@ public class MovieService {
         }
         return new ItemNotFoundException("Movie not found!").getMessage();
     }
-
-    public String returnMovie(int bookID) {
-        List<Movie> movies = repository.getListOfMovies();
-        for (Movie movie : movies) {
-            if (movie.getId() == bookID) {
-                if (!movie.isAvailable()) {
-                    movie.setAvailable(true);
-                    return "Thank you for returning the movie!";
-                }
-                else return "That is not a valid movie to return.";
-            }
-        }
-        return new ItemNotFoundException("Movie not found!").getMessage();
-    }
 }
