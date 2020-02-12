@@ -1,13 +1,12 @@
 package com.twu.biblioteca;
 
-
-
 import com.twu.biblioteca.enums.UserType;
 import com.twu.biblioteca.models.Book;
 import com.twu.biblioteca.models.User;
 import com.twu.biblioteca.repositories.BookRepository;
 import com.twu.biblioteca.services.BibliotecaService;
 import com.twu.biblioteca.services.BookService;
+import com.twu.biblioteca.services.ConsoleInteractions;
 import com.twu.biblioteca.services.MenuService;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,16 +21,16 @@ import static org.junit.Assert.assertThat;
 public class BibliotecaServiceTest {
 
     private BibliotecaService bibliotecaService;
+    private ConsoleInteractions console;
     private BookService bookService;
     private MenuService menu;
     private BookRepository repository;
     private List<Book> books;
 
-    //FAZER STUB DO SERVICE SEM USER INPUT?
-    //USAR INJECAO NO SERVICE?
-
     @Before
     public void setUp() {
+        console = new ConsoleInteractions();
+//        console = mock(ConsoleInteractions.class);
         bibliotecaService = new BibliotecaService();
         bookService = new BookService();
         menu = new MenuService();
@@ -41,8 +40,9 @@ public class BibliotecaServiceTest {
 
     @Test
     public void welcomeMessageWhenStarts() {
+        bibliotecaService.start();
         String expected = "Welcome to Biblioteca. Your on-stop-shop for great book titles in Bangalore";
-//        assertEquals(expected, bibliotecaService.start());
+//        assertEquals(expected, console.printMessage(""));
     }
 
     @Test

@@ -14,7 +14,7 @@ public class BibliotecaService {
     private BookService bookService = new BookService();
     private MovieService movieService = new MovieService();
     private LoginService loginService = new LoginService();
-    private Scanner scanner = new Scanner(System.in);
+    private ConsoleInteractions console = new ConsoleInteractions();
     private int itemId;
     private static final String WELCOME_MSG = "Welcome to Biblioteca. Your on-stop-shop for great book titles in Bangalore";
     private static final String ONLY_NUM = "Only numbers allowed.";
@@ -28,15 +28,15 @@ public class BibliotecaService {
     public BibliotecaService() { }
 
     public void start() {
-        System.out.println(menuStart());
+        menuStart();
         try {
             int option;
             do {
-                option = userInput();
+                option = console.userInput();
                 showMenuOption(option);
             } while (option != 0);
         } catch (InputMismatchException e) {
-            System.out.println(ONLY_NUM);
+            console.printMessage(ONLY_NUM);
         }
     }
 
@@ -64,7 +64,7 @@ public class BibliotecaService {
                 showUserInformation();
                 break;
             case 0:
-                System.out.println(QUIT);
+                console.printMessage(QUIT);
                 break;
             default:
                 menuInvalidOption();
@@ -72,30 +72,30 @@ public class BibliotecaService {
         }
     }
 
-    private String menuStart() {
-        return WELCOME_MSG + "\n" + menu.showMainMenu();
+    private void menuStart() {
+        console.printMessage(WELCOME_MSG + "\n" + menu.showMainMenu());
     }
 
     private void showListBooks() {
-        System.out.println(showBookList());
-        System.out.println(menu.showMainMenu());
+        console.printMessage(showBookList());
+        console.printMessage(menu.showMainMenu());
     }
 
     private void showListMovies() {
-        System.out.println(showMoviesList());
-        System.out.println(menu.showMainMenu());
+        console.printMessage(showMoviesList());
+        console.printMessage(menu.showMainMenu());
     }
 
     private void menuCheckout(int option) {
         User verified = login();
         if (verified != null) {
-            System.out.println(menu.showCheckoutMenu(option));
-            itemId = userInput();
+            console.printMessage(menu.showCheckoutMenu(option));
+            itemId = console.userInput();
             checkoutItem(verified, option, itemId);
 
-            System.out.println(menu.showMainMenu());
+            console.printMessage(menu.showMainMenu());
         } else {
-            System.out.println(INVALID_USER);
+            console.printMessage(INVALID_USER);
             login();
         }
     }
@@ -103,55 +103,47 @@ public class BibliotecaService {
     private void menuLibrarian() {
         User verified = login();
         if (verified.getUserType().equals(UserType.LIBRARIAN)) {
-            System.out.println(menu.showLibrarianMenu() + "\n");
-            int option = userInput();
+            console.printMessage(menu.showLibrarianMenu() + "\n");
+            int option = console.userInput();
             if (option == 1) {
-                System.out.println(showListBooksChecked() + "\n");
+                console.printMessage(showListBooksChecked() + "\n");
             }
         } else {
-            System.out.println(INVALID_USER);
+            console.printMessage(INVALID_USER);
         }
-        System.out.println(menu.showMainMenu());
+        console.printMessage(menu.showMainMenu());
     }
 
     private void menuInvalidOption() {
-        System.out.println(INVALID);
-        System.out.println(menu.showMainMenu());
+        console.printMessage(INVALID);
+        console.printMessage(menu.showMainMenu());
     }
 
     private void checkoutItem(User user, int option, int itemId) {
         if (option == 2) {
-            System.out.println(bookService.checkoutBook(user, itemId) + "\n");
+            console.printMessage(bookService.checkoutBook(user, itemId) + "\n");
         } else if (option == 5) {
-            System.out.println(movieService.checkoutMovie(itemId));
+            console.printMessage(movieService.checkoutMovie(itemId));
         }
     }
 
     private void menuReturnBook() {
         User verified = login();
         if (verified != null) {
-            System.out.println(menu.showReturnMenu());
-            itemId = userInput();
+            console.printMessage(menu.showReturnMenu());
+            itemId = console.userInput();
             returnBook(itemId);
-            System.out.println(menu.showMainMenu());
+            console.printMessage(menu.showMainMenu());
         } else {
-            System.out.println(INVALID_USER);
+            console.printMessage(INVALID_USER);
             login();
         }
     }
 
     private void showUserInformation() {
         User user = login();
-        System.out.println(user.toString());
-        System.out.println(menu.showMainMenu());
-    }
-
-    private int userInput() {
-        return scanner.nextInt();
-    }
-
-    private String userInputLogin() {
-        return scanner.next();
+        console.printMessage(user.toString());
+        console.printMessage(menu.showMainMenu());
     }
 
     private List<String> showListBooksChecked() {
@@ -159,13 +151,13 @@ public class BibliotecaService {
     }
 
     private User login() {
-        System.out.println(LOGIN_USER);
-        String userId = userInputLogin();
-        System.out.println(LOGIN_PASS);
-        String userPassword = userInputLogin();
+        console.printMessage(LOGIN_USER);
+        String userId = console.userInputLogin();
+        console.printMessage(LOGIN_PASS);
+        String userPassword = console.userInputLogin();
         User user = loginService.userLogin(userId, userPassword);
         if (user != null) {
-            System.out.println(HELLO + user.getName());
+            console.printMessage(HELLO + user.getName());
             return user;
         }
         return null;
@@ -180,6 +172,6 @@ public class BibliotecaService {
     }
 
     private void returnBook(int bookID) {
-        System.out.println(bookService.returnBook(bookID) + "\n");
+        console.printMessage(bookService.returnBook(bookID) + "\n");
     }
 }
